@@ -1,4 +1,4 @@
-package com.example.findmyip.repository.remote
+package com.example.findmyip.remote
 
 import com.example.findmyip.model.FindMyIpModel
 import kotlinx.coroutines.Dispatchers

@@ -19,8 +19,9 @@ import com.example.findmyip.utils.ApiState
 import com.example.findmyip.viewmodels.FindMyIPViewModel
 import java.lang.reflect.Field
 
+
 @Composable
-fun ShowIPScreen(){
+fun ShowIpScreen() {
     val viewModel = viewModel(modelClass = FindMyIPViewModel::class.java)
     when (val result = viewModel.response.value) {
         is ApiState.Success -> {
@@ -28,10 +29,14 @@ fun ShowIPScreen(){
         }
 
         is ApiState.Failure -> {
-            Box(modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center) {
-                Text(text = "${result.msg}",
-                    textAlign = TextAlign.Center)
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "${result.msg}",
+                    textAlign = TextAlign.Center
+                )
             }
         }
 
@@ -44,10 +49,14 @@ fun ShowIPScreen(){
         }
 
         ApiState.Empty -> {
-            Box(modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center) {
-                Text(text = "Data is empty!!",
-                    textAlign = TextAlign.Center)
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "Data is empty!!",
+                    textAlign = TextAlign.Center
+                )
             }
         }
     }

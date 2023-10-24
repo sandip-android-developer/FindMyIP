@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'maven-publish'
 }
 
 android {
@@ -54,6 +55,15 @@ android {
             option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
 }
 
 dependencies {
@@ -98,4 +108,17 @@ dependencies {
     //kotlin Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.sandip-android-developer'
+                artifactId 'FindMyIP'
+                version = android.defaultConfig.versionName // or manually '1.0'
+            }
+        }
+    }
 }
