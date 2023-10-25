@@ -15,7 +15,6 @@ import com.example.mylibrary.utils.ApiState
 import com.example.mylibrary.viewmodels.FindMyIPViewModel
 import java.lang.reflect.Field
 
-
 @Composable
 fun ShowIpScreen() {
     val viewModel = viewModel(modelClass = FindMyIPViewModel::class.java)

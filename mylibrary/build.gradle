@@ -37,18 +37,8 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion '1.3.2'
     }
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-
-        singleVariant('debug') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
+
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -95,27 +85,12 @@ dependencies {
 }
 
 afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                // Applies the component for the release build variant.
-                components.getByName('release')
-
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.github.sandip-android-developer'
-                artifactId = 'FindMyIP'
-                version = 'v1.1'
-            }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                components.getByName('debug')
-
-                groupId = 'com.github.sandip-android-developer'
-                artifactId = 'FindMyIP'
-                version = 'v1.1'
-            }
+    android.libraryVariants.each {variant->
+        publishing.publications.create(variant.name,MavenPublication){
+            from components.findByName(variant.name)
+            groupId = 'com.sandipandroiddeveloper'
+            artifactId = 'findmyiplibrary'
+            version ='1.0.0'
         }
     }
 }
