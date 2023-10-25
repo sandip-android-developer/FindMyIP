@@ -5,13 +5,13 @@ import android.content.Context
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class FindMyAppApplication : Application() {
+class FindMyAppLibrary : Application() {
     init {
         Instance = this
     }
 
     companion object {
-        private var Instance: FindMyAppApplication? = null
+        private var Instance: FindMyAppLibrary? = null
         fun applicationContext(): Context {
             return Instance!!.applicationContext
         }

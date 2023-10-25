@@ -1,4 +1,4 @@
-package com.example.findmyip.model
+package com.example.mylibrary.model
 
 import com.google.gson.annotations.SerializedName
 

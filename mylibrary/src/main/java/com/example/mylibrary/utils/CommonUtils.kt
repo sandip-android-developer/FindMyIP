@@ -1,4 +1,4 @@
-package com.example.findmyip.utils
+package com.example.mylibrary.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

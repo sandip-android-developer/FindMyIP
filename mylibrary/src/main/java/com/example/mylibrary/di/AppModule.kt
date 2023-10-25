@@ -1,8 +1,8 @@
-package com.example.findmyip.di
+package com.example.mylibrary.di
 
-import com.example.findmyip.constants.AppConstant
-import com.example.findmyip.repository.remote.ApiService
-import com.example.findmyip.repository.remote.MainRepository
+import com.example.mylibrary.constants.AppConstant
+import com.example.mylibrary.repository.remote.ApiService
+import com.example.mylibrary.repository.remote.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.findmyip.constants
+package com.example.mylibrary.constants
 
 object AppConstant {
     const val BASE_URL = "https://ipapi.co/"

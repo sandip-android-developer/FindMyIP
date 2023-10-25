@@ -1,10 +1,6 @@
-package com.example.findmyip.view
+package com.example.mylibrary.view
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,9 +10,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.findmyip.model.FindMyIpModel
-import com.example.findmyip.utils.ApiState
-import com.example.findmyip.viewmodels.FindMyIPViewModel
+import com.example.mylibrary.model.FindMyIpModel
+import com.example.mylibrary.utils.ApiState
+import com.example.mylibrary.viewmodels.FindMyIPViewModel
 import java.lang.reflect.Field
 
 
